@@ -9,5 +9,10 @@ canvas.height = 842;
 var ctx = canvas.getContext("2d");
 
 // Draw a red box
-ctx.fillStyle = "red";
+ctx.fillStyle = "green";
 ctx.fillRect(50, 50, 500, 750);
+
+// Draw circle
+ctx.beginPath();
+ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+ctx.stroke();
