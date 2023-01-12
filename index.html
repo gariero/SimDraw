@@ -10,7 +10,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Type</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="typesDroplist">
                         <option>Round bar</option>
                         <option>Square bar</option>
                         <option>Cylinder</option>
@@ -42,7 +42,7 @@
     <script>
         document.getElementById("shapeSelect").addEventListener("change", function () {
             var selectedOption = this.value;
-            var diameterWidthField = document.getElementById("diameter_width");
+            var diameterWidthField = document.getElementById("typesDroplist");
             if (selectedOption === "Round bar" || selectedOption === "Disc") {
                 diameterWidthField.disabled = true;
             } else {
