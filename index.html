@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My Canvas Drawing</title>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+
+    <script>
+      // Get the canvas element
+      var canvas = document.getElementById("myCanvas");
+
+      // Set the canvas size
+      canvas.width = 500;
+      canvas.height = 500;
+
+      // Get the canvas context
+      var ctx = canvas.getContext("2d");
+
+      // Draw a red box
+      ctx.fillStyle = "red";
+      ctx.fillRect(100, 100, 300, 300);
+
+      // Draw a blue box
+      ctx.fillStyle = "blue";
+      ctx.fillRect(150, 150, 200, 200);
+    </script>
+</body>
+</html>
