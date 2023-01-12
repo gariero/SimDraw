@@ -9,24 +9,30 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Select</label>
+                    <label for="exampleFormControlSelect1">Type</label>
                     <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
+                        <option>Round bar</option>
+                        <option>Square bar</option>
+                        <option>Cylinder</option>
+                        <option>Disc</option>
+                        <option>Tube</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="diameter_height">D/H</label>
+                    <input type="text" class="form-control" id="diameter_height" pattern="[0-9]*">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="diameter_base">d/B</label>
+                    <input type="text" class="form-control" id="diameter_base" pattern="[0-9]*">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="button" class="btn btn-secondary">Clear</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <div class="form-group">
+                    <label for="length_height">L/H</label>
+                    <input type="text" class="form-control" id="length_height" pattern="[0-9]*">
+                </div>
+                <button type="button" class="btn btn-success" id="generate-btn">Generate</button>
+                <button type="button" class="btn btn-secondary" id="clear-btn">Clear</button>
+                <button type="button" class="btn btn-danger" id="print-btn">Print</button>
             </div>
             <div class="col-md-8">
                 <canvas id="myCanvas"></canvas>
