@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <label for="diameter_width">d/B</label>
-                    <input type="text" class="form-control" id="diameter_width" pattern="[0-9]*">
+                    <input type="text" class="form-control" id="diameter_width" pattern="[0-9]*"  id="shapeSelect">
                 </div>
                 <div class="form-group">
                     <label for="length_height">L/H</label>
@@ -40,6 +40,18 @@
         </div>
     </div>
     <script>
+        document.getElementById("shapeSelect").addEventListener("change", function () {
+            var selectedOption = this.value;
+            var diameterWidthField = document.getElementById("diameter_width");
+            if (selectedOption === "Round bar" || selectedOption === "Disc") {
+                diameterWidthField.disabled = true;
+            } else {
+                diameterWidthField.disabled = false;
+            }
+        });
+
+    </script>
+    <script>
         // Get the canvas element
         var canvas = document.getElementById("myCanvas");
 
@@ -53,6 +65,7 @@
         // Draw a red box
         ctx.fillStyle = "red";
         ctx.fillRect(50, 50, 500, 750);
+
     </script>
 </body>
 </html>
