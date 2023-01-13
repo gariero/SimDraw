@@ -103,11 +103,11 @@ generateBtn.addEventListener("click", function () {
 
     //frame text insert
     ctx.font = "10px Arial";
-    ctx.fillText("Изм.", 58, 740);
-    ctx.fillText("Лист", 80, 740);
-    ctx.fillText("№ докум.", 118, 740);
-    ctx.fillText("Подп.", 130, 740);
-    ctx.fillText("Дата", 214, 740);
+    ctx.fillText("РР·Рј.", 58, 740);
+    ctx.fillText("Р›РёСЃС‚", 80, 740);
+    ctx.fillText("в„– РґРѕРєСѓРј.", 118, 740);
+    ctx.fillText("РџРѕРґРї.", 130, 740);
+    ctx.fillText("Р”Р°С‚Р°", 214, 740);
 
     // get values from form fields
     var typesDroplist = document.getElementById("typesDroplist").value;
