@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\css",
+    "\\js"
   ],
-  "SelectedNode": "\\C:\\Users\\Константин\\Source\\Repos\\SimDraw",
+  "SelectedNode": "\\css\\style.css",
   "PreviewInSolutionExplorer": false
 }
