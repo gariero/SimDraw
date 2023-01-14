@@ -1,4 +1,14 @@
 body {
-    background-color: #0080ff;
+    background-color: #E8F7EE;
 }
+#myCanvas {
+    background-color: white;
+    border: 1px solid black;
+    width: 595px;
+    height: 842px;
+}
+#generate-btn {
+    background-color:#2A4747 ;
+}
+
 

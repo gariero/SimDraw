@@ -2,121 +2,184 @@
 var generateBtn = document.getElementById("generate-btn");
 
 generateBtn.addEventListener("click", function () {
+
+
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
-    // set canvas dimensions to A4 format in pixels
-    canvas.width = 595;
-    canvas.height = 842;
 
-    // Frame
+
+    // set canvas dimensions to A4 format in pixels
+    canvas.width = 1190;
+    canvas.height = 1684;
+
+    // Frame A4
+    ctx.lineWidth = 2;
     ctx.beginPath();
-    //main frame
-    ctx.moveTo(57, 15);
-    ctx.lineTo(582, 15);
-    ctx.lineTo(582, 835);
-    ctx.lineTo(57, 835);
-    ctx.lineTo(57, 15);
-    //left block
-    ctx.moveTo(57, 15);
-    ctx.lineTo(23, 15);
-    ctx.lineTo(23, 356);
-    ctx.lineTo(57, 356);
-    ctx.moveTo(38, 15);
-    ctx.lineTo(38, 356);
-    ctx.moveTo(23, 185);
-    ctx.lineTo(57, 185);
-    //left 2 block
-    ctx.moveTo(57, 835);
-    ctx.lineTo(23, 835);
-    ctx.lineTo(23, 418);
-    ctx.lineTo(57, 418);
-    ctx.moveTo(23, 517);
-    ctx.lineTo(57, 517);
-    ctx.moveTo(23, 588);
-    ctx.lineTo(57, 588);
-    ctx.moveTo(23, 659);
-    ctx.lineTo(57, 659);
-    ctx.moveTo(23, 760);
-    ctx.lineTo(57, 760);
-    ctx.moveTo(38, 418);
-    ctx.lineTo(38, 835);
-    //Legend topline
-    ctx.moveTo(57, 670);
-    ctx.lineTo(582, 670);
-    ctx.moveTo(243, 716);
-    ctx.lineTo(582, 716);
-    ctx.moveTo(243, 670);
-    ctx.lineTo(243, 835);
-    ctx.moveTo(243, 787);
-    ctx.lineTo(582, 787);
-    ctx.moveTo(440, 716);
-    ctx.lineTo(440, 835);
-    ctx.moveTo(440, 728);
-    ctx.lineTo(582, 728);
-    ctx.moveTo(440, 770);
-    ctx.lineTo(582, 770);
-    ctx.moveTo(496, 770);
-    ctx.lineTo(496, 787);
-    ctx.moveTo(482, 716);
-    ctx.lineTo(482, 770);
-    ctx.moveTo(530, 716);
-    ctx.lineTo(530, 770);
-    ctx.moveTo(454, 728);
-    ctx.lineTo(454, 770);
-    ctx.moveTo(468, 728);
-    ctx.lineTo(468, 770);
-    //top drw No
-    ctx.moveTo(255, 15);
-    ctx.lineTo(255, 54);
-    ctx.lineTo(57, 54);
-    //legend context
-    ctx.moveTo(105, 670);
-    ctx.lineTo(105, 835);
-    ctx.moveTo(170, 670);
-    ctx.lineTo(170, 835);
-    ctx.moveTo(212, 670);
-    ctx.lineTo(212, 835);
-    ctx.moveTo(57, 685);
-    ctx.lineTo(243, 685);
-    ctx.moveTo(57, 700);
-    ctx.lineTo(243, 700);
-    ctx.moveTo(57, 715);
-    ctx.lineTo(243, 715);
-    ctx.moveTo(57, 730);
-    ctx.lineTo(243, 730);
-    ctx.moveTo(57, 745);
-    ctx.lineTo(243, 745);
-    ctx.moveTo(57, 760);
-    ctx.lineTo(243, 760);
-    ctx.moveTo(57, 775);
-    ctx.lineTo(243, 775);
-    ctx.moveTo(57, 790);
-    ctx.lineTo(243, 790);
-    ctx.moveTo(57, 805);
-    ctx.lineTo(243, 805);
-    ctx.moveTo(57, 820);
-    ctx.lineTo(243, 820);
+    //GOST add 2
+    ctx.rect(44, 29, 28, 340);
+    ctx.rect(72, 29, 40, 340);
+    ctx.rect(44, 369, 28, 340);
+    ctx.rect(72, 369, 40, 340);
+    // GOST add 1
+    ctx.rect(44, 834, 68, 822);
+    ctx.rect(44, 1032, 68, 284);
+    ctx.rect(44, 1174, 68, 340);
+    ctx.moveTo(72, 834);
+    ctx.lineTo(72, 1656);
+    // GOST add 3
+    ctx.moveTo(508, 29);
+    ctx.lineTo(508, 108);
+    ctx.lineTo(112, 108);
+    // GOST form No1
+    ctx.moveTo(112, 1344);
+    ctx.lineTo(1160, 1344);
+    ctx.moveTo(112, 1457);
+    ctx.lineTo(480, 1457);
+    ctx.moveTo(112, 1485);
+    ctx.lineTo(480, 1485);
+    ctx.moveTo(480, 1429);
+    ctx.lineTo(1160, 1429);
+
+    ctx.moveTo(877, 1457);
+    ctx.lineTo(1160, 1457);
+    ctx.moveTo(877, 1542);
+    ctx.lineTo(1160, 1542);
+    ctx.moveTo(480, 1571);
+    ctx.lineTo(1160, 1571);
+    ctx.moveTo(962, 1429);
+    ctx.lineTo(962, 1542);
+    ctx.moveTo(1058, 1429);
+    ctx.lineTo(1058, 1542);
+    ctx.moveTo(990, 1542);
+    ctx.lineTo(990, 1571);
+    ctx.moveTo(877, 1429);
+    ctx.lineTo(877, 1656);
+    ctx.moveTo(480, 1344);
+    ctx.lineTo(480, 1656);
+    ctx.moveTo(112, 1656);
+    ctx.lineTo(1160, 1656);
+    ctx.lineTo(1160, 29);
+    ctx.lineTo(112, 29);
+    ctx.moveTo(112, 708);
+    ctx.lineTo(112, 833);
+    ctx.moveTo(151, 1344);
+    ctx.lineTo(151, 1457);
+    ctx.moveTo(208, 1344);
+    ctx.lineTo(208, 1656);
+    ctx.moveTo(338, 1344);
+    ctx.lineTo(338, 1656);
+    ctx.moveTo(423, 1344);
+    ctx.lineTo(423, 1656);
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(112, 1372);
+    ctx.lineTo(480, 1372);
+    ctx.moveTo(112, 1400);
+    ctx.lineTo(480, 1400);
+    ctx.moveTo(112, 1429);
+    ctx.lineTo(480, 1429);
+    ctx.moveTo(112, 1514);
+    ctx.lineTo(480, 1514);
+    ctx.moveTo(112, 1542);
+    ctx.lineTo(480, 1542);
+    ctx.moveTo(112, 1571);
+    ctx.lineTo(480, 1571);
+    ctx.moveTo(112, 1599);
+    ctx.lineTo(480, 1599);
+    ctx.moveTo(112, 1627);
+    ctx.lineTo(480, 1627);
+    ctx.moveTo(906, 1457);
+    ctx.lineTo(906, 1542);
+    ctx.moveTo(934, 1457);
+    ctx.lineTo(934, 1542);
 
     ctx.strokeStyle = "black";
     ctx.stroke();
 
     //frame text insert
-    ctx.font = "10px Arial";
-    ctx.fillText("Изм.", 58, 740);
-    ctx.fillText("Лист", 80, 740);
-    ctx.fillText("№ докум.", 118, 740);
-    ctx.fillText("Подп.", 130, 740);
-    ctx.fillText("Дата", 214, 740);
+    ctx.font = "18px Arial";
+    ctx.fillText("Изм. ", 114, 1450);
+    ctx.fillText("Лист", 162, 1450);
+    ctx.fillText("№ докум.", 236, 1450);
+    ctx.fillText("Подп.", 358, 1450);
+    ctx.fillText("Дата", 429, 1450);
+    ctx.fillText("Лист", 888, 1564);
+    ctx.fillText("Лит.", 902, 1452);
+    ctx.fillText("Масса", 982, 1452);
+    ctx.fillText("Масштаб", 1070, 1452);
+    ctx.fillText("Листов    1", 1000, 1566);
+    ctx.fillText("Копировал", 642, 1682);
+    ctx.fillText("Формат А4", 910, 1682);
 
     // get values from form fields
     var typesDroplist = document.getElementById("typesDroplist").value;
     var diameter_height = document.getElementById("diameter_height").value;
     var diameter_width = document.getElementById("diameter_width").value;
     var length_height = document.getElementById("length_height").value;
-    var yPos = canvas.height / 3;
+    var yPos = canvas.height / 10;
+    var xPos = canvas.width / 10;
+    var selectedValue = document.getElementById("typesDroplist").value;
 
-    // type drawing
+    //logo
+    var img = document.getElementById("logo");
+    ctx.drawImage(img, 886, 1576);
 
 
+    // draw the figures
+    if (selectedValue === "Round bar") {
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.rect(xPos * 2, yPos * 2, xPos * 4, yPos);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(xPos * 8, yPos * 2.5, yPos / 2, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        // dim lines for rectangle
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(xPos * 2, yPos * 2);
+        ctx.lineTo(xPos * 2, yPos * 3.5);
+        ctx.moveTo(xPos * 6, yPos * 2);
+        ctx.lineTo(xPos * 6, yPos * 3.5);
+        ctx.moveTo(xPos * 2 - 5, yPos * 3.5 - 5);
+        ctx.lineTo(xPos * 6 + 5, yPos * 3.5 - 5);
+
+        // dim lines for circle
+        ctx.moveTo(xPos * 8 - yPos / 2, yPos * 2.5);
+        ctx.lineTo(xPos * 8 - yPos / 2, yPos * 3.5);
+        ctx.moveTo(xPos * 8 + yPos / 2, yPos * 2.5);
+        ctx.lineTo(xPos * 8 + yPos / 2, yPos * 3.5);
+        ctx.moveTo(xPos * 8 - yPos / 2 - 5, yPos * 3.5 - 5);
+        ctx.lineTo(xPos * 8 + yPos / 2 + 5, yPos * 3.5 - 5);
+        ctx.stroke();
+
+        //Axes lines
+        ctx.setLineDash([10, 5]);
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(xPos * 2 - 5, yPos * 2.5);
+        ctx.lineTo(xPos * 8 + yPos / 2 + 5, yPos * 2.5);
+        ctx.moveTo(xPos * 8, yPos * 2.5 - yPos / 2 - 5);
+        ctx.lineTo(xPos * 8, yPos * 2.5 + yPos / 2 + 5);
+        ctx.stroke();
+
+        //text dims
+        ctx.font = "20px Arial";
+        //Lenght
+        ctx.fillText(length_height, xPos * 3.9, yPos * 3.4);
+        //Diameter
+        ctx.fillText("Ø" + diameter_height, xPos * 7.8, yPos * 3.4);
+
+
+    } else if (selectedValue === "square") {
+        ctx.fillStyle = "green";
+        ctx.fillRect(25, 25, 50, 50);
+    }
+    ctx.restore();
+  
 })
