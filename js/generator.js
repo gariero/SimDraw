@@ -192,9 +192,8 @@ generateBtn.addEventListener("click", function () {
                 steelTextWidth = ctx.measureText(selectedValue2).width;
             }
         }
-
-        // Draw the text
-        ctx.fillText(selectedValue2, 485, 1650);
+        var x = (386 - steelTextWidth) / 2;
+        ctx.fillText(selectedValue2, 485 + x, 1650);
 
 
 
