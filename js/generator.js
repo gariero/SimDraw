@@ -123,6 +123,7 @@ generateBtn.addEventListener("click", function () {
     var yPos = canvas.height / 10;
     var xPos = canvas.width / 10;
     var selectedValue = document.getElementById("typesDroplist").value;
+    var selectedValue2 = document.getElementById("SteelDroplist").value;
 
     //logo
     var img = document.getElementById("logo");
@@ -174,6 +175,28 @@ generateBtn.addEventListener("click", function () {
         ctx.fillText(length_height, xPos * 3.9, yPos * 3.4);
         //Diameter
         ctx.fillText("Ø" + diameter_height, xPos * 7.8, yPos * 3.4);
+
+        // Set the font size to a large value
+        ctx.font = "32px Arial";
+
+        // Measure the width of the text
+        var steelTextWidth = ctx.measureText(selectedValue2).width;
+
+        // Check if the text is too wide for the rectangle
+        if (steelTextWidth > 100) {
+            // Reduce the font size until the text fits within the rectangle
+            while (steelTextWidth > 100) {
+                ctx.font = ctx.font.replace(/\d+px/, function (match) {
+                    return (parseInt(match) - 1) + "px";
+                });
+                steelTextWidth = ctx.measureText(selectedValue2).width;
+            }
+        }
+
+        // Draw the text
+        ctx.fillText(selectedValue2, 485, 1650);
+
+
 
 
     } else if (selectedValue === "square") {
