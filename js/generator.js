@@ -183,9 +183,9 @@ generateBtn.addEventListener("click", function () {
         var steelTextWidth = ctx.measureText(selectedValue2).width;
 
         // Check if the text is too wide for the rectangle
-        if (steelTextWidth > 100) {
+        if (steelTextWidth > 386) {
             // Reduce the font size until the text fits within the rectangle
-            while (steelTextWidth > 100) {
+            while (steelTextWidth > 386) {
                 ctx.font = ctx.font.replace(/\d+px/, function (match) {
                     return (parseInt(match) - 1) + "px";
                 });
