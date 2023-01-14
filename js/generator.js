@@ -177,10 +177,11 @@ generateBtn.addEventListener("click", function () {
         ctx.fillText("Ø" + diameter_height, xPos * 7.8, yPos * 3.4);
 
         // Set the font size to a large value
-        ctx.font = "32px Arial";
+        ctx.font = "48px Arial";
 
-        // Measure the width of the text
+        // Measure the width & height of the text
         var steelTextWidth = ctx.measureText(selectedValue2).width;
+        var steelTextHeight = ctx.measureText(selectedValue2).height;
 
         // Check if the text is too wide for the rectangle
         if (steelTextWidth > 386) {
@@ -192,8 +193,19 @@ generateBtn.addEventListener("click", function () {
                 steelTextWidth = ctx.measureText(selectedValue2).width;
             }
         }
+        // Check if the text is too tall for the rectangle
+        if (steelTextHeight > 72) {
+            // Reduce the font size until the text fits within the rectangle
+            while (steelTextHeight > 386) {
+                ctx.font = ctx.font.replace(/\d+px/, function (match) {
+                    return (parseInt(match) - 1) + "px";
+                });
+                steelTextHeight = ctx.measureText(selectedValue2).height;
+            }
+        }
         var x = (386 - steelTextWidth) / 2;
-        ctx.fillText(selectedValue2, 485 + x, 1650);
+        var y = (72 - steelTextHeight) / 2;
+        ctx.fillText(selectedValue2, 485 + x, 1650 + y);
 
 
 
