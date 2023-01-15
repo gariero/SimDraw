@@ -7,57 +7,175 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Type</label>
-                    <select class="form-control" id="typesDroplist" onchange="ChangeDropdowns(this.value);">
-                        <option>Round bar</option>
-                        <option>Square bar</option>
-                        <option>Cylinder</option>
-                        <option>Disc</option>
-                        <option>Tube</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="diameter_height">D/H</label>
-                    <input type="text" class="form-control" id="diameter_height" onkeypress="return isNumber(event)">
-                    <select class="form-control" id="diameter_height_tolerance_sym">
-                        <option></option>
-                        <option>±</option>
-                        <option>+</option>
-                        <option>-</option>
-                        </select>
-                    <input type="text" class="form-control" id="diameter_height_tolerance" onkeypress="return isNumber(event)">
-                </div>
-                <div class="form-group" id="shapeSelect" style="display: none;">
-                    <label for="diameter_width">d/B</label>
-                    <input type="text" class="form-control" id="diameter_width" onkeypress="return isNumber(event)">
-                </div>
-                <div class="form-group">
-                    <label for="length_height">L/H</label>
-                    <input type="text" class="form-control" id="length_height" onkeypress="return isNumber(event)">
-                </div>
-                <button type="button" class="btn btn-success" id="generate-btn">Generate</button>
-                <button type="button" class="btn btn-secondary" id="clear-btn">Clear</button>
-                <button type="button" class="btn btn-success" id="print-btn">Print</button>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Steel</label>
-                    <select class="form-control" id="SteelDroplist" onchange="ChangeDropdowns2(this.value);">
+    <nav class="navbar bg-primary navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa d-inline fa-lg fa-circle"></i>
+                <b> SIMDRAW</b>
+            </a>
+        </div>
+    </nav>
+    <div class="container">
 
-                    </select>
+
+        <div class="row top2">
+            <div class="col-md-6">
+                <!-- выбор типа -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <label style="font-weight: bold" ;>Тип</label>
+                    </div>
+                    <div class="col-md-8">
+                        <select class="form-control" id="typesDroplist" onchange="ChangeDropdowns(this.value);">
+                            <option>Вал</option>
+                            <option>Брусок</option>
+                            <option>Диск</option>
+                            <option>Диск с отверстием</option>
+                            <option>Труба</option>
+                        </select>
+                    </div>
                 </div>
+
+                <hr />
+                <!-- блок размеров -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <label style="font-weight: bold;">Размеры</label>
+                    </div>
+                </div>
+                <br />
+                <!-- Ф или H -->
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="diameter_height_label" id="diameter_height_label" style="font-weight: bold;">Ø</label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" placeholder="Диаметр" class="form-control" id="diameter_height" onkeypress="return isNumber(event)">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="diameter_height_tolerance1" id="diameter_height_tolerance1_label" style="font-weight: bold;">±</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" placeholder="Допуск + (±)" class="form-control" id="diameter_height_tolerance1" onkeypress="return isNumber(event)">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" placeholder="Допуск -" class="form-control" id="diameter_height_tolerance2" onkeypress="return isNumber(event)">
+                    </div>
+                </div>
+                <div class="row top2">
+                    <div class="col-md-3">
+                        <label for="diameter_height_reference_label" id="diameter_height_reference_label">Чистовой Ø</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="diameter_height_reference" onkeypress="return isNumber(event)">
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+                <hr />
+                <!-- Фвнут или B -->
+                <div class="row shapeSelect d-none">
+                    <div class="col-md-1">
+                        <label for="diameter_width_label" id="diameter_width_label">Ø</label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" placeholder="Диаметр внутренний" class="form-control" id="diameter_width" onkeypress="return isNumber(event)">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="diameter_width_tolerance1" id="diameter_width_tolerance1_label">±</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" placeholder="Допуск" class="form-control" id="diameter_width_tolerance1" onkeypress="return isNumber(event)">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" placeholder="Допуск" class="form-control" id="diameter_width_tolerance2" onkeypress="return isNumber(event)">
+                    </div>
+                </div>
+                <div class="row top2 shapeSelect d-none">
+                    <div class="col-md-3">
+                        <label for="diameter_width_reference_label" id="diameter_width_reference_label">Чистовой Øвн</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control shapeSelect" id="diameter_width_reference" onkeypress="return isNumber(event)">
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+                <hr class="shapeSelect d-none" />
+                <!-- L или H -->
+                <div class="row top2">
+                    <div class="col-md-1">
+                        <label for="length_height_label" id="length_height_label">L</label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="length_height" onkeypress="return isNumber(event)">
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="length_height_tolerance_sym">
+                            <option></option>
+                            <option>±</option>
+                            <option>+</option>
+                            <option>-</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="length_height_tolerance" onkeypress="return isNumber(event)">
+                    </div>
+                </div>
+                <div class="row top2">
+                    <div class="col-md-3">
+                        <label for="length_height_reference_label" id="length_height_reference_label">Чистовая L</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="length_height_reference" onkeypress="return isNumber(event)">
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+                <hr />
+
+                <!-- Выбор марки стали -->
+                <div class="row top2">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Steel</label>
+                        <select class="form-control" placeholder="Выбор марки" id="SteelDroplist" onchange="ChangeDropdowns2(this.value);">
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Обозначение чертежа -->
+                <div class="row top2">
+                    <div class="col-md-12">
+                        <label for="drawingNumber">Обозначение чертежа</label>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="text" placeholder="Обозначение чертежа" class="form-control" id="drawingNumber">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- кнопки -->
+                <div class="row top2">
+                    <button type="button" class="btn btn-success" id="generate-btn">Generate</button>
+                    <button type="button" class="btn btn-secondary" id="clear-btn">Clear</button>
+                    <button type="button" class="btn btn-success" id="print-btn">Print</button>
+                </div>
+
             </div>
+
             <div class="col-md-6">
                 <canvas id="myCanvas"></canvas>
             </div>
         </div>
     </div>
-    <img id="logo" src="img/logo.jpg" style="display: none;"/>
-    <script src="js/tweaks.js"></script>
+    <img id="logo" src="img/logo.jpg" style="display: none;" />
+    <script src="js/tweaks.js" charset="utf-8"></script>
+    <script src="js/roundBar.js" charset="utf-8"></script>
     <script src="js/generator.js" charset="utf-8"></script>
 
 </body>

@@ -1,10 +1,14 @@
 function ChangeDropdowns(value) {
-    if (value == "Round bar" || value == "Disc") {
-        document.getElementById('shapeSelect').style.display = 'none';
-    } else {
-        document.getElementById('shapeSelect').style.display = 'block';
+    var elements = document.getElementsByClassName("shapeSelect");
+    for (var i = 0; i < elements.length; i++) {
+        if (value == "Вал" || value == "Диск") {
+            elements[i].classList.add("d-none");
+        } else {
+            elements[i].classList.remove("d-none");
+        }
     }
 }
+
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
