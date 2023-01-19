@@ -118,6 +118,9 @@
     var xPos = canvas.width / 10;
     var selectedValue = document.getElementById("typesDroplist").value;
     var selectedValue2 = document.getElementById("SteelDroplist").value;
+    var diameter_height_tolerance1 = document.getElementById("diameter_height_tolerance1").value;
+    var diameter_height_tolerance2 = document.getElementById("diameter_height_tolerance2").value;
+    var diameterText = "Ø" + diameter_height + "±" + diameter_height_tolerance1 + " " + diameter_height_tolerance2;
 
     //logo
     var img = document.getElementById("logo");
@@ -168,7 +171,7 @@
     //Lenght
     ctx.fillText(length_height, xPos * 3.9, yPos * 3.4);
     //Diameter
-    ctx.fillText("Ø" + diameter_height + "±" + diameter_height_tolerance1 + " " + diameter_height_tolerance2, xPos * 7.8, yPos * 3.4);
+    ctx.fillText(diameterText, xPos * 7.7, yPos * 3.4);
 
 
     //steel grade block

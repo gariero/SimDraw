@@ -105,29 +105,28 @@
                 </div>
                 <hr class="shapeSelect d-none" />
                 <!-- L или H -->
-                <div class="row top2">
+
+                <!-- изменить!-->
+                <div class="row">
                     <div class="col-md-1">
                         <label for="length_height_label" id="length_height_label">L</label>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="length_height" onkeypress="return isNumber(event)">
+                        <input type="text" placeholder="Длина / Высота" class="form-control" id="length_height" onkeypress="return isNumber(event)">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="length_height_tolerance1" id="length_height_tolerance1_label">±</label>
                     </div>
                     <div class="col-md-3">
-                        <select class="form-control" id="length_height_tolerance_sym">
-                            <option></option>
-                            <option>±</option>
-                            <option>+</option>
-                            <option>-</option>
-                        </select>
+                        <input type="text" placeholder="Допуск" class="form-control" id="length_height_tolerance1" onkeypress="return isNumber(event)">
                     </div>
-
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" id="length_height_tolerance" onkeypress="return isNumber(event)">
+                    <div class="col-md-3">
+                        <input type="text" placeholder="Допуск" class="form-control" id="length_height_tolerance2" onkeypress="return isNumber(event)">
                     </div>
                 </div>
                 <div class="row top2">
                     <div class="col-md-3">
-                        <label for="length_height_reference_label" id="length_height_reference_label">Чистовая L</label>
+                        <label for="length_height_reference_label" id="length_height_reference_label">Чистовая длина / высота</label>
                     </div>
                     <div class="col-md-3">
                         <input type="text" class="form-control" id="length_height_reference" onkeypress="return isNumber(event)">
@@ -137,6 +136,8 @@
                     </div>
                 </div>
                 <hr />
+                <!-- изменить!-->
+
 
                 <!-- Выбор марки стали -->
                 <div class="row top2">
