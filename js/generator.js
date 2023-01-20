@@ -8,7 +8,7 @@ var ctx = canvas.getContext("2d");
 generateBtn.addEventListener("click", function () {
 
     if (selectedValue === "Вал") {
-        roundBar();
+        roundBarSvg();
     }
     else if (selectedValue === "Брусок") {
         squareBar();

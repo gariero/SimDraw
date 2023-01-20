@@ -1,3 +1,5 @@
+import { jsPDF } from "jspdf";
+
 function ChangeDropdowns(value) {
     var elements = document.getElementsByClassName("shapeSelect");
     for (var i = 0; i < elements.length; i++) {
@@ -26,6 +28,15 @@ clearBtn.addEventListener("click", function () {
     var ctx = canvas.getContext("2d");
     context.clearRect(0, 0, canvas.width, canvas.height);
 })
+
+var downloadBtn = document.getElementById("download-btn");
+downloadBtn.addEventListener("click", function () {
+    var svg = document.getElementById("mySVG").innerHTML;
+    var pdf = new jsPDF();
+    pdf.addSVG(svg, 0, 0);
+    pdf.save("download.pdf");
+})
+
 
 
 fetch('tables/grades.txt')
